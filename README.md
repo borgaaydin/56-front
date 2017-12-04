@@ -1,4 +1,5 @@
 # 56vue
+[![Build Status](https://travis-ci.org/borgaaydin/56-front.svg?branch=master)](https://travis-ci.org/borgaaydin/56-front)
 
 > 56 Edebiyat Quiz Front-End
 
