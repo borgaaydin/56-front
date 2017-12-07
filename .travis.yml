@@ -8,3 +8,6 @@ deploy:
   script: rsync -r --delete-after --quiet $TRAVIS_BUILD_DIR/dist root@145.239.81.21:/webapps/56front
   on:
     branch: master
+addons:
+  ssh_known_hosts:
+  - 145.239.81.21
