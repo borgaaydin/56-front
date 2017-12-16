@@ -14,9 +14,9 @@ deploy:
     branch: master
 env:
   global:
-  - REMOTE_APP_DIR=/var/www/MY_DOMAIN.COM/
-  - REMOTE_USER=deploy
-  - REMOTE_HOST=123.45.56.78
+  - REMOTE_APP_DIR=/webapps/56front
+  - REMOTE_USER=webuser
+  - REMOTE_HOST=145.239.81.21
   - PORT=8080
 addons:
   ssh_known_hosts:
