@@ -1,47 +1,39 @@
 <template>
-  <div v-show="this.isReady">
-    <div v-for="(question, index) in quiz">
-      <div class="questionBox" v-show="index === questionIndex">
-        <h2 class="questionTitle">
-          <strong>"{{question.soru}}"</strong> adlı eserin yazarı kimdir?
-        </h2>
-        <div class="answerList">
-          <quiz-option v-for="response in question.cevaplar" :key="response.id" :text="response" :dogruCevap="question.dogruCevap" :locked="locked"></quiz-option>
-        </div>
-      </div>
+  <div>
+    <div v-show="!isReady">
+      <h3>
+        Lütfen soru tipini seçin
+      </h3>
+      <ul class="questionTypes">
+        <li>
+          Eser / Yazar
+        </li>
+        <li>
+          Yazar / Eser
+        </li>
+      </ul>
     </div>
-    <div v-show="questionIndex === quizLength">
-      <h2>
-        10 soruluk edebiyat maceranız sona erdi!
-      </h2>
-      <p>
-        Notunuz : {{ totalCorrect }} / {{ quizLength }}
-      </p>
-    </div>
+    <Quiz :is-ready="isReady"
+          :data-source="dataSource"></Quiz>
   </div>
 </template>
 <script>
-  import QuizOption from './QuizOption'
+  import Quiz from './Quiz'
   export default {
-    name: 'quiz',
-    props: ['dataSource', 'questionType', 'answerType', 'period', 'isReady'],
+    name: 'quiz-creator',
+    props: [],
     components: {
-      QuizOption
+      Quiz
     },
     data () {
       return {
-        quiz: [],
-        questionIndex: 0,
-        quizLength: 10,
-        userResponses: new Array(10),
-        totalCorrect: 0,
-        hasWrongAnswer: false,
-        locked: false
+        isReady: false,
+        dataSource: 'http://127.0.0.1:8000/api/quiz/eser/yazar'
       }
     },
     methods: {
       updateSource: function () {
-        this.$http.get(this.dataSource)
+        this.$http.get('https://elli6.com/api/quiz/')
           .then(response => {
             this.quiz = response.data.quiz
           })

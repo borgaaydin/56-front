@@ -1,13 +1,26 @@
 language: node_js
 node_js:
-  - "8.9.1"
+- 8.9.1
 script: npm build
+notifications:
+  email:
+    on_failure: change
+    on_success: change
 deploy:
   provider: script
   skip_cleanup: true
   script: rsync -r --delete-after --quiet $TRAVIS_BUILD_DIR/dist root@145.239.81.21:/webapps/56front
   on:
     branch: master
+env:
+  global:
+  - REMOTE_APP_DIR=/var/www/MY_DOMAIN.COM/
+  - REMOTE_USER=deploy
+  - REMOTE_HOST=123.45.56.78
+  - PORT=8080
 addons:
   ssh_known_hosts:
   - 145.239.81.21
+before_install:
+- openssl aes-256-cbc -K $encrypted_d101413217ee_key -iv $encrypted_d101413217ee_iv
+  -in deploy_rsa.enc -out deploy_rsa -d

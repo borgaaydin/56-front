@@ -1,15 +1,15 @@
 <template>
   <div class="container" id="app">
-    <Quiz></Quiz>
+    <quiz-creator></quiz-creator>
   </div>
 </template>
 
 <script>
-  import Quiz from './components/Quiz'
+  import QuizCreator from './components/QuizCreator.vue'
   export default {
     name: 'app',
     components: {
-      Quiz
+      QuizCreator
     }
   }
 </script>
