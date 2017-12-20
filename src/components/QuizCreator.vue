@@ -5,11 +5,10 @@
         Lütfen soru tipini seçin
       </h3>
       <ul class="questionTypes">
-        <li>
-          Eser / Yazar
-        </li>
-        <li>
-          Yazar / Eser
+        <li v-for="(type, index) in typeList">
+          <span>
+            {{ type.name }}
+          </span>
         </li>
       </ul>
     </div>
@@ -19,6 +18,8 @@
 </template>
 <script>
   import Quiz from './Quiz'
+  import typeList from './type_list'
+
   export default {
     name: 'quiz-creator',
     props: [],
@@ -28,7 +29,8 @@
     data () {
       return {
         isReady: false,
-        dataSource: 'http://127.0.0.1:8000/api/quiz/eser/yazar'
+        dataSource: 'http://127.0.0.1:8000/api/quiz/eser/yazar',
+        typeList
       }
     },
     methods: {
@@ -120,5 +122,26 @@
 
   .answerList span input {
     display: none;
+  }
+
+  .questionTypes li {
+    height: 40px;
+    margin-bottom: 10px;
+    border: 2px solid #2c3e50a6;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+
+  .questionTypes li:hover {
+    color: white;
+    background-color: #FE7675;
+    border-color: #FE7675;
+  }
+
+  .questionTypes li span {
+
   }
 </style>

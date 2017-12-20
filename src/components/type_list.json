@@ -1,0 +1,33 @@
+[
+  {
+     "id" : 1,
+     "name" : "Eser - Yazar",
+     "hasPeriod" : true
+  },
+  {
+    "id" : 2,
+    "name" : "Yazar - Eser",
+    "hasPeriod" : true
+  },
+  {
+    "id" : 3,
+    "name" : "Dönem - Eser",
+    "hasPeriod" : false
+  },
+  {
+    "id" : 4,
+    "name" : "Eser - Dönem",
+    "hasPeriod" : false
+  },
+  {
+    "id" : 5,
+    "name" : "Eser - Akım",
+    "hasPeriod" : false
+  },
+  {
+    "id" : 6,
+    "name" : "Eser - Tür",
+    "hasPeriod" : false
+  }
+]
+
