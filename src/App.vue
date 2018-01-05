@@ -1,5 +1,8 @@
 <template>
   <div class="container" id="app">
+    <div class="logo">
+      <img srcset="./assets/elli6_logo.png, ./assets/elli6_logo@2x.png 2x" src="./assets/elli6_logo.png" alt="elli6">
+    </div>
     <quiz-creator></quiz-creator>
   </div>
 </template>

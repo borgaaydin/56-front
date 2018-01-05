@@ -1,0 +1,110 @@
+[
+  {
+    "id" : 0,
+    "name" : "Tüm Dönemler"
+  },
+  {
+     "id" : 1,
+     "name" : "1960 Sonrası Mistik Duyarlılık"
+  },
+  {
+    "id" : 2,
+    "name" : "1980 Sonrası Roman-Öykü"
+  },
+  {
+    "id" : 3,
+    "name" : "1980 Sonrası Şiir"
+  },
+  {
+    "id" : 4,
+    "name" : "Bağımsız"
+  },
+  {
+    "id" : 5,
+    "name" : "Beş Hececiler"
+  },
+  {
+    "id" : 6,
+    "name" : "Bireyin İç Dünyasını Esas Alanlar"
+  },
+  {
+    "id" : 7,
+    "name" : "Cumhuriyet Dönemi Öğretici Metinler"
+  },
+  {
+    "id" : 8,
+    "name" : "Divan Edebiyatı"
+  },
+  {
+    "id" : 9,
+    "name" : "Fecr-i Âti"
+  },
+  {
+    "id" : 10,
+    "name" : "Garip Dışında Yenilikçi Şiir"
+  },
+  {
+    "id" : 11,
+    "name" : "Garipçiler"
+  },
+  {
+    "id" : 12,
+    "name" : "Göstermeye Bağlı Metinler"
+  },
+  {
+    "id" : 13,
+    "name" : "Halk Şiiri"
+  },
+  {
+    "id" : 14,
+    "name" : "İkinci Yeni"
+  },
+  {
+    "id" : 15,
+    "name" : "İkinci Yeni Sonrası Toplumcu Şiir"
+  },
+  {
+    "id" : 16,
+    "name" : "Maviciler"
+  },
+  {
+    "id" : 17,
+    "name" : "Milli Edebiyat"
+  },
+  {
+    "id" : 18,
+    "name" : "Milli Edebiyat Zevk ve Anlayışını Sürdürenler"
+  },
+  {
+    "id" : 19,
+    "name" : "Modernizmi Esas Alanlar"
+  },
+  {
+    "id" : 20,
+    "name" : "Öz Şiir Anlayışını Sürdürenler"
+  },
+  {
+    "id" : 21,
+    "name" : "Postmodernizm"
+  },
+  {
+    "id" : 22,
+    "name" : "Serbest Nazım ve Toplumcu Şiir"
+  },
+  {
+    "id" : 23,
+    "name" : "Servet-i Fünun"
+  },
+  {
+    "id" : 24,
+    "name" : "Tanzimat 1.Dönem"
+  },
+  {
+    "id" : 25,
+    "name" : "Tanzimat 2.Dönem"
+  },
+  {
+    "id" : 26,
+    "name" : "Yedi Meşaleciler"
+  }
+]

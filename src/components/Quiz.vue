@@ -6,10 +6,14 @@
           <strong>"{{question.soru}}"</strong> adlı eserin yazarı kimdir?
         </h2>
         <div class="answerList">
-          <quiz-option v-for="response in question.cevaplar" :key="response.id" :text="response" :dogruCevap="question.dogruCevap" :locked="locked"></quiz-option>
+          <quiz-option :question="question" :locked="locked"></quiz-option>
         </div>
       </div>
     </div>
+    <div>
+      {{ totalCorrect }} / {{ quizLength }}
+    </div>
+
     <div v-show="questionIndex === quizLength">
       <h2>
         10 soruluk edebiyat maceranız sona erdi!
@@ -24,13 +28,12 @@
   import QuizOption from './QuizOption'
   export default {
     name: 'quiz',
-    props: ['dataSource', 'questionType', 'answerType', 'period', 'isReady'],
+    props: ['dataSource', 'questionType', 'answerType', 'period', 'isReady', 'quiz'],
     components: {
       QuizOption
     },
     data () {
       return {
-        quiz: [],
         questionIndex: 0,
         quizLength: 10,
         userResponses: new Array(10),
@@ -48,7 +51,6 @@
       }
     },
     created: function () {
-      this.updateSource()
     }
   }
 </script>

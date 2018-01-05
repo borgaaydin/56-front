@@ -1,19 +1,23 @@
 <template>
-  <div v-on:click="check(text)"
-       :disabled="locked"
-       v-model="checked"
-       :value="text"
-       :class="{'correct': isCorrect, 'incorrect': isWrong}">
+  <div>
+    <div v-on:click="check(response)"
+         v-for="response in question.cevaplar"
+         :disabled="locked"
+         v-model="checked"
+         :value="response"
+         :class="{'correct': isCorrect, 'incorrect': isWrong}">
         <span>
-            {{text}}
+            {{response}}
         </span>
+    </div>
   </div>
+
 </template>
 
 <script>
   export default {
     name: 'quiz-option',
-    props: ['text', 'dogruCevap', 'locked'],
+    props: ['question', 'locked'],
     data () {
       return {
         checked: false,
@@ -33,16 +37,15 @@
           setTimeout(function () {
             self.$parent.locked = false
             self.$parent.questionIndex++
-          }, 1200)
+          }, 600)
         } else {
-          console.log(this.$parent.quiz)
-//          setTimeout(function () {
-//            self.$parent.locked = false
-//          }, 200)
-//          this.correct = false
-//          setTimeout(function () {
-//            self.$parent.locked = false
-//          }, 1400)
+          this.$parent.locked = true
+          this.correct = false
+          let self = this
+          setTimeout(function () {
+            self.$parent.locked = false
+            self.$parent.questionIndex++
+          }, 600)
         }
       }
     },

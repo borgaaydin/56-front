@@ -2,23 +2,33 @@
   <div>
     <div v-show="!isReady">
       <h3>
-        Lütfen soru tipini seçin
+        Soru tipini seçin
       </h3>
       <ul class="questionTypes">
-        <li v-for="(type, index) in typeList">
+        <li v-for="(type, index) in typeList"
+            v-on:click="typeSelector(type)"
+            v-show="!typeChosen">
           <span>
             {{ type.name }}
           </span>
         </li>
       </ul>
+      <ul class="questionPeriod" v-show="typeChosen && typeChosen.hasPeriod">
+        <li v-for="(period, index) in periodList"
+            v-on:click="periodSelector(period)">
+          {{ period.name }}
+        </li>
+      </ul>
     </div>
     <Quiz :is-ready="isReady"
-          :data-source="dataSource"></Quiz>
+          :data-source="dataSource"
+          :quiz="quiz"></Quiz>
   </div>
 </template>
 <script>
   import Quiz from './Quiz'
   import typeList from './type_list'
+  import periodList from './period_list'
 
   export default {
     name: 'quiz-creator',
@@ -28,21 +38,37 @@
     },
     data () {
       return {
+        quiz: [],
         isReady: false,
-        dataSource: 'http://127.0.0.1:8000/api/quiz/eser/yazar',
-        typeList
+        dataSource: 'http://elli6.com/api/quiz/',
+        typeList,
+        periodList,
+        typeChosen: null,
+        periodChosen: ''
       }
     },
     methods: {
       updateSource: function () {
-        this.$http.get('https://elli6.com/api/quiz/')
+        this.$http.get(this.dataSource)
           .then(response => {
+            this.isReady = !this.isReady
             this.quiz = response.data.quiz
           })
+      },
+      typeSelector: function (type) {
+        this.typeChosen = type
+        this.dataSource += type.url
+        if (!type.hasPeriod) {
+          this.updateSource()
+        }
+      },
+      periodSelector: function (period) {
+        this.periodChosen = period
+        this.dataSource += period.id
+        this.updateSource()
       }
     },
     created: function () {
-      this.updateSource()
     }
   }
 </script>
@@ -124,7 +150,8 @@
     display: none;
   }
 
-  .questionTypes li {
+  .questionTypes li,
+  .questionPeriod li{
     height: 40px;
     margin-bottom: 10px;
     border: 2px solid #2c3e50a6;
@@ -135,13 +162,19 @@
     cursor: pointer;
   }
 
-  .questionTypes li:hover {
+  .questionTypes li:hover,
+  .questionPeriod li:hover{
     color: white;
     background-color: #FE7675;
     border-color: #FE7675;
   }
 
-  .questionTypes li span {
+  .questionTypes li span,
+  .questionPeriod li span{
 
+  }
+
+  .questionPeriod {
+    padding: 0 10px;
   }
 </style>

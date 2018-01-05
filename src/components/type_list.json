@@ -2,31 +2,37 @@
   {
      "id" : 1,
      "name" : "Eser - Yazar",
+     "url" : "eser/yazar/",
      "hasPeriod" : true
   },
   {
     "id" : 2,
     "name" : "Yazar - Eser",
+    "url" : "yazar/eser/",
     "hasPeriod" : true
   },
   {
     "id" : 3,
     "name" : "Dönem - Eser",
+    "url" : "donem/eser/",
     "hasPeriod" : false
   },
   {
     "id" : 4,
     "name" : "Eser - Dönem",
+    "url" : "eser/donem/",
     "hasPeriod" : false
   },
   {
     "id" : 5,
     "name" : "Eser - Akım",
+    "url" : "eser/akim/",
     "hasPeriod" : false
   },
   {
     "id" : 6,
     "name" : "Eser - Tür",
+    "url" : "eser/tur/",
     "hasPeriod" : false
   }
 ]

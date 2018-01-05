@@ -1,0 +1,38 @@
+[
+  {
+    "id" : "",
+    "name" : "Tüm Dönemler"
+  },
+  {
+    "id" : 1,
+    "name" : "1980 Sonrası Roman-Öykü"
+  },
+  {
+    "id" : 2,
+    "name" : "Bireyin İç Dünyasını Esas Alanlar"
+  },
+  {
+    "id" : 3,
+    "name" : "Divan Edebiyatı"
+  },
+  {
+    "id" : 4,
+    "name" : "Garip Dışında Yenilikçi Şiir"
+  },
+  {
+    "id" : 5,
+    "name" : "İkinci Yeni"
+  },
+  {
+    "id" : 6,
+    "name" : "Milli Edebiyat"
+  },
+  {
+    "id" : 7,
+    "name" : "Modernizmi Esas Alanlar"
+  },
+  {
+    "id" : 8,
+    "name" : "Servet-i Fünun"
+  }
+]
