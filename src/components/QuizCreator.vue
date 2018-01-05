@@ -40,7 +40,7 @@
       return {
         quiz: [],
         isReady: false,
-        dataSource: 'http://elli6.com/api/quiz/',
+        dataSource: 'https://elli6.com/api/quiz/',
         typeList,
         periodList,
         typeChosen: null,
