@@ -1,7 +1,6 @@
 <template>
   <div>
     <div v-on:click="check(response)"
-         v-for="response in question.cevaplar"
          :disabled="locked"
          v-model="checked"
          :value="response"
@@ -17,7 +16,7 @@
 <script>
   export default {
     name: 'quiz-option',
-    props: ['question', 'locked'],
+    props: ['response', 'index', 'locked'],
     data () {
       return {
         checked: false,
@@ -26,27 +25,30 @@
     },
     methods: {
       check: function (response) {
-        if (this.$parent.locked) return
+        if (this.$parent.$parent.locked) return
         this.checked = true
-        let i = this.$parent.questionIndex
-        if (response === this.$parent.quiz[i].dogruCevap) {
-          this.$parent.locked = true
+        let i = this.$parent.$parent.questionIndex
+        if (response === this.$parent.$parent.quiz[i].dogruCevap) {
+          this.$parent.$parent.locked = true
           this.correct = true
-          this.$parent.totalCorrect += 1
+          this.$parent.$parent.totalCorrect += 1
           let self = this
           setTimeout(function () {
-            self.$parent.locked = false
-            self.$parent.questionIndex++
+            self.$parent.$parent.locked = false
+            self.$parent.$parent.questionIndex++
           }, 600)
         } else {
-          this.$parent.locked = true
+          this.$parent.$parent.locked = true
           this.correct = false
           let self = this
           setTimeout(function () {
-            self.$parent.locked = false
-            self.$parent.questionIndex++
+            self.$parent.$parent.locked = false
+            self.$parent.$parent.questionIndex++
           }, 600)
         }
+      },
+      checkQuestion: function () {
+        this.checked = true
       }
     },
     computed: {
@@ -56,6 +58,15 @@
       isWrong () {
         return !this.correct && this.checked
       }
+    },
+    created: function () {
+      if (this.response === this.$parent.$parent.quiz[this.index].dogruCevap) {
+        this.correct = true
+      } else {
+        this.correct = false
+      }
+
+      this.checked = false
     }
   }
 </script>
@@ -63,7 +74,7 @@
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 
-  .answerList span {
+  .answer span {
     width: calc(100% - 40px);
     display: inline-block;
     background-color: #ffffff;
@@ -78,21 +89,21 @@
     box-shadow: 0px 4px 10px -4px rgba(0,0,0,0.1);
   }
 
-  .answerList div.incorrect span {
+  .answer div.incorrect span {
     background-color: rgba(255, 0, 0, 0.18);
   }
 
-  .answerList div.correct span {
+  .answer div.correct span {
     background-color: rgba(0, 128, 0, 0.22);
   }
 
-  .answerList span:hover {
+  .answer span:hover {
     -webkit-box-shadow: 0px 4px 10px -4px rgba(0,0,0,0.02);
     -moz-box-shadow: 0px 4px 10px -4px rgba(0,0,0,0.02);
     box-shadow: 0px 4px 10px -4px rgba(0,0,0,0.02);
   }
 
-  .answerList span input {
+  .answer span input {
     display: none;
   }
 </style>

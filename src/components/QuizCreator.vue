@@ -40,7 +40,7 @@
       return {
         quiz: [],
         isReady: false,
-        dataSource: 'https://elli6.com/api/quiz/',
+        dataSource: 'http://127.0.0.1:8000/api/quiz/',
         typeList,
         periodList,
         typeChosen: null,

@@ -5,8 +5,8 @@
         <h2 class="questionTitle">
           <strong>"{{question.soru}}"</strong> adlı eserin yazarı kimdir?
         </h2>
-        <div class="answerList">
-          <quiz-option :question="question" :locked="locked"></quiz-option>
+        <div>
+          <quiz-question :question="question" :qindex="index" :locked="locked"></quiz-question>
         </div>
       </div>
     </div>
@@ -25,12 +25,12 @@
   </div>
 </template>
 <script>
-  import QuizOption from './QuizOption'
+  import QuizQuestion from './QuizQuestion'
   export default {
     name: 'quiz',
     props: ['dataSource', 'questionType', 'answerType', 'period', 'isReady', 'quiz'],
     components: {
-      QuizOption
+      QuizQuestion
     },
     data () {
       return {

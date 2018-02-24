@@ -21,7 +21,7 @@ npm run build --repor
 # run unit tests
 npm run unit
 
-# run e2e tests
+# run e2e testsvg
 npm run e2e
 
 # run all tests
