@@ -24,10 +24,6 @@
       showCorrectAnswer: function () {
         for (let child of this.$children) {
           if (child.correct) child.checked = true
-//          if (this.$children.hasOwnProperty('checked')) {
-//            console.log(child)
-//            child.checked = true
-//          }
         }
       }
     },
