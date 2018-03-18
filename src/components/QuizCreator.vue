@@ -1,5 +1,6 @@
 <template>
   <div>
+
     <div v-show="!isReady">
       <h3>
         Soru tipini seçin
@@ -22,36 +23,46 @@
     </div>
     <Quiz :is-ready="isReady"
           :data-source="dataSource"
-          :quiz="quiz"></Quiz>
+          :quiz="quiz"
+          :loading="loading"></Quiz>
+    <pulse-loader :loading="loading" :color="pulsecolor" :size="pulsesize"></pulse-loader>
   </div>
 </template>
 <script>
   import Quiz from './Quiz'
   import typeList from './type_list'
   import periodList from './period_list'
+  import PulseLoader from 'vue-spinner/src/PulseLoader.vue'
 
   export default {
     name: 'quiz-creator',
     props: [],
     components: {
-      Quiz
+      Quiz,
+      PulseLoader
+
     },
     data () {
       return {
         quiz: [],
         isReady: false,
-        dataSource: 'https://elli6.com/api/quiz/',
+        dataSource: 'http://localhost:8000/api/quiz/',
         typeList,
         periodList,
         typeChosen: null,
-        periodChosen: ''
+        periodChosen: '',
+        pulsecolor: '#2B6676',
+        pulsesize: '30px',
+        loading: false
       }
     },
     methods: {
       updateSource: function () {
+        this.isReady = !this.isReady
+        this.loading = true
         this.$http.get(this.dataSource)
           .then(response => {
-            this.isReady = !this.isReady
+            this.loading = false
             this.quiz = response.data.quiz
           })
       },
@@ -176,5 +187,9 @@
 
   .questionPeriod {
     padding: 0 10px;
+  }
+
+  .v-spinner {
+    margin-top: 100px;
   }
 </style>

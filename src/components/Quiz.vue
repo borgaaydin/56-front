@@ -1,4 +1,5 @@
 <template>
+
   <div v-show="this.isReady">
     <div v-for="(question, index) in quiz">
       <div class="questionBox" v-show="index === questionIndex">
@@ -10,7 +11,7 @@
         </div>
       </div>
     </div>
-    <div>
+    <div v-show="!(this.loading)">
       {{ totalCorrect }} / {{ quizLength }}
     </div>
 
@@ -26,9 +27,10 @@
 </template>
 <script>
   import QuizQuestion from './QuizQuestion'
+
   export default {
     name: 'quiz',
-    props: ['dataSource', 'questionType', 'answerType', 'period', 'isReady', 'quiz'],
+    props: ['dataSource', 'questionType', 'answerType', 'period', 'isReady', 'quiz', 'loading'],
     components: {
       QuizQuestion
     },
@@ -39,16 +41,13 @@
         userResponses: new Array(10),
         totalCorrect: 0,
         hasWrongAnswer: false,
-        locked: false
+        locked: false,
+        pulsecolor: '#000000',
+        pulsesize: 12,
+        loading: true
       }
     },
     methods: {
-      updateSource: function () {
-        this.$http.get(this.dataSource)
-          .then(response => {
-            this.quiz = response.data.quiz
-          })
-      }
     },
     created: function () {
     }
