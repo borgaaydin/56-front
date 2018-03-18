@@ -46,13 +46,13 @@
       return {
         quiz: [],
         isReady: false,
-        dataSource: 'http://localhost:8000/api/quiz/',
+        dataSource: 'https://elli6.com/api/quiz/',
         typeList,
         periodList,
         typeChosen: null,
         periodChosen: '',
         pulsecolor: '#2B6676',
-        pulsesize: '30px',
+        pulsesize: '24px',
         loading: false
       }
     },
