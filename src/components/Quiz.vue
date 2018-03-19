@@ -12,7 +12,7 @@
       </div>
     </div>
     <div v-show="!(this.loading)">
-      {{ totalCorrect }} / {{ quizLength }}
+      Soru {{ index }}
     </div>
 
     <div v-show="questionIndex === quizLength">

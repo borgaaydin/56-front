@@ -1,6 +1,5 @@
 <template>
   <div>
-
     <div v-show="!isReady">
       <h3>
         Soru tipini seçin
@@ -176,8 +175,8 @@
   .questionTypes li:hover,
   .questionPeriod li:hover{
     color: white;
-    background-color: #FE7675;
-    border-color: #FE7675;
+    background-color: #2B6676;
+    border-color: #2B6676;
   }
 
   .questionTypes li span,
