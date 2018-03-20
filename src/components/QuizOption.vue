@@ -60,11 +60,7 @@
       }
     },
     created: function () {
-      if (this.response === this.$parent.$parent.quiz[this.index].dogruCevap) {
-        this.correct = true
-      } else {
-        this.correct = false
-      }
+      this.correct = this.response === this.$parent.$parent.quiz[this.index].dogruCevap
 
       this.checked = false
     }

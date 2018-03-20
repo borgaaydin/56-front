@@ -23,7 +23,8 @@
     <Quiz :is-ready="isReady"
           :data-source="dataSource"
           :quiz="quiz"
-          :loading="loading"></Quiz>
+          :loading="loading"
+          v-on:restart="restartQuiz"></Quiz>
     <pulse-loader :loading="loading" :color="pulsecolor" :size="pulsesize"></pulse-loader>
   </div>
 </template>
@@ -76,6 +77,13 @@
         this.periodChosen = period
         this.dataSource += period.id
         this.updateSource()
+      },
+      restartQuiz: function () {
+        this.quiz = []
+        this.isReady = false
+        this.typeChosen = null
+        this.periodChosen = ''
+        this.dataSource = 'https://elli6.com/api/quiz/'
       }
     },
     created: function () {

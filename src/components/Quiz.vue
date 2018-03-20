@@ -11,8 +11,9 @@
         </div>
       </div>
     </div>
-    <div v-show="!(this.loading)">
-      Soru {{ index }}
+    <div v-show="!(this.loading) && !(questionIndex === quizLength)" class="index-indicator">
+      <strong>Soru</strong>
+      <span>{{ questionIndex }} / {{ quizLength }}</span>
     </div>
 
     <div v-show="questionIndex === quizLength">
@@ -22,6 +23,10 @@
       <p>
         Notunuz : {{ totalCorrect }} / {{ quizLength }}
       </p>
+
+      <button class="replayButton" v-on:click="restartQuiz">
+        Tekrar Başla
+      </button>
     </div>
   </div>
 </template>
@@ -48,6 +53,11 @@
       }
     },
     methods: {
+      restartQuiz: function () {
+        this.questionIndex = 0
+        this.totalCorrect = 0
+        this.$emit('restart')
+      }
     },
     created: function () {
     }
@@ -129,5 +139,40 @@
 
   .answerList span input {
     display: none;
+  }
+
+  .index-indicator {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+
+  }
+
+  .index-indicator span {
+    font-size: 14px;
+  }
+
+  .replayButton {
+    width: 240px;
+    height: 54px;
+    margin: 100px auto;
+    cursor: pointer;
+    outline: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 0;
+    border-radius: 4px;
+    background-color: #2B6676;
+    color: #F6F6F6;
+
+    font-size: 24px;
+
+    -webkit-box-shadow: 0px 6px 10px 0px rgba(43,88,118,0.5);
+    -moz-box-shadow: 0px 6px 10px 0px rgba(43,88,118,0.5);
+    box-shadow: 0px 6px 10px 0px rgba(43,88,118,0.5);
+
   }
 </style>

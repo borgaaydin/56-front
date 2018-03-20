@@ -14,7 +14,7 @@
           </span>
         </h1>
         <h2 class="landing-subtitle">
-          Heryerden erişebileceğin <br>
+          Her yerden erişebileceğin <br>
           ücretsiz edebiyat soru bankası
         </h2>
         <button class="startButton" v-on:click="openQuiz">
