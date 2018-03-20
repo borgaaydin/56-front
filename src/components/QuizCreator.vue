@@ -199,4 +199,10 @@
   .v-spinner {
     margin-top: 100px;
   }
+
+  @media (max-width: 900px) {
+    .questionTypes {
+      padding: 0 8px;
+    }
+  }
 </style>

@@ -155,4 +155,31 @@
   .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
     opacity: 0;
   }
+
+  @media (max-width: 900px) {
+    .logo img {
+      height: 60px;
+    }
+
+    .landing {
+      padding: 0 10px;
+    }
+
+    h1.landing-title {
+      font-size: 36px;
+      line-height: 24px;
+    }
+
+    .landing-title span {
+      font-size: 24px;
+    }
+
+    .landing-subtitle {
+      font-size: 20px;
+    }
+
+    body.landing {
+      background: none;
+    }
+  }
 </style>
