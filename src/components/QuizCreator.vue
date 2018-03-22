@@ -47,7 +47,7 @@
       return {
         quiz: [],
         isReady: false,
-        dataSource: 'http://localhost:8000/api/quiz/',
+        dataSource: 'https://elli6.com/api/quiz/',
         qText: '',
         typeList,
         periodList,
