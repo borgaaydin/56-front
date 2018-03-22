@@ -3,37 +3,43 @@
      "id" : 1,
      "name" : "Eser - Yazar",
      "url" : "eser/yazar/",
-     "hasPeriod" : true
+     "hasPeriod" : true,
+     "questionText" : "adlı eserin yazarı kimdir?"
   },
   {
     "id" : 2,
     "name" : "Yazar - Eser",
     "url" : "yazar/eser/",
-    "hasPeriod" : true
+    "hasPeriod" : true,
+    "questionText" : "hangi eserin yazarıdır?"
   },
   {
     "id" : 3,
     "name" : "Dönem - Eser",
     "url" : "donem/eser/",
-    "hasPeriod" : false
+    "hasPeriod" : false,
+    "questionText" : "dönemine ait eser hangisidir?"
   },
   {
     "id" : 4,
     "name" : "Eser - Dönem",
     "url" : "eser/donem/",
-    "hasPeriod" : false
+    "hasPeriod" : false,
+    "questionText" : "adlı eserin dönemi hangisidir?"
   },
   {
     "id" : 5,
     "name" : "Eser - Akım",
     "url" : "eser/akim/",
-    "hasPeriod" : false
+    "hasPeriod" : false,
+    "questionText" : "adlı eserin akımı hangisidir?"
   },
   {
     "id" : 6,
     "name" : "Eser - Tür",
     "url" : "eser/tur/",
-    "hasPeriod" : false
+    "hasPeriod" : false,
+    "questionText" : "adlı eserin türü nedir?"
   }
 ]
 

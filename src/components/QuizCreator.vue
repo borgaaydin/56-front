@@ -24,6 +24,7 @@
           :data-source="dataSource"
           :quiz="quiz"
           :loading="loading"
+          :question-text="qText"
           v-on:restart="restartQuiz"></Quiz>
     <pulse-loader :loading="loading" :color="pulsecolor" :size="pulsesize"></pulse-loader>
   </div>
@@ -46,7 +47,8 @@
       return {
         quiz: [],
         isReady: false,
-        dataSource: 'https://elli6.com/api/quiz/',
+        dataSource: 'http://localhost:8000/api/quiz/',
+        qText: '',
         typeList,
         periodList,
         typeChosen: null,
@@ -69,6 +71,7 @@
       typeSelector: function (type) {
         this.typeChosen = type
         this.dataSource += type.url
+        this.qText = type.questionText
         if (!type.hasPeriod) {
           this.updateSource()
         }

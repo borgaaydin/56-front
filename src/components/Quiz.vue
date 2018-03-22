@@ -4,7 +4,7 @@
     <div v-for="(question, index) in quiz">
       <div class="questionBox" v-show="index === questionIndex">
         <h2 class="questionTitle">
-          <strong>"{{question.soru}}"</strong> adlı eserin yazarı kimdir?
+          <strong>"{{question.soru}}"</strong> {{ questionText }}
         </h2>
         <div>
           <quiz-question :question="question" :qindex="index" :locked="locked"></quiz-question>
@@ -35,7 +35,7 @@
 
   export default {
     name: 'quiz',
-    props: ['dataSource', 'questionType', 'answerType', 'period', 'isReady', 'quiz', 'loading'],
+    props: ['dataSource', 'questionType', 'answerType', 'period', 'isReady', 'quiz', 'loading', 'questionText'],
     components: {
       QuizQuestion
     },
