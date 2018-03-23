@@ -4,35 +4,35 @@
     "name" : "Tüm Dönemler"
   },
   {
-    "id" : 1,
+    "id" : 2,
     "name" : "1980 Sonrası Roman-Öykü"
   },
   {
-    "id" : 2,
+    "id" : 6,
     "name" : "Bireyin İç Dünyasını Esas Alanlar"
   },
   {
-    "id" : 3,
+    "id" : 8,
     "name" : "Divan Edebiyatı"
   },
   {
-    "id" : 4,
+    "id" : 10,
     "name" : "Garip Dışında Yenilikçi Şiir"
   },
   {
-    "id" : 5,
+    "id" : 14,
     "name" : "İkinci Yeni"
   },
   {
-    "id" : 6,
+    "id" : 17,
     "name" : "Milli Edebiyat"
   },
   {
-    "id" : 7,
+    "id" : 19,
     "name" : "Modernizmi Esas Alanlar"
   },
   {
-    "id" : 8,
+    "id" : 23,
     "name" : "Servet-i Fünun"
   }
 ]
