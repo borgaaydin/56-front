@@ -13,7 +13,7 @@
     </div>
     <div v-show="!(this.loading) && !(questionIndex === quizLength)" class="index-indicator">
       <strong>Soru</strong>
-      <span>{{ questionIndex }} / {{ quizLength }}</span>
+      <span>{{ questionIndex + 1 }} / {{ quizLength }}</span>
     </div>
 
     <div v-show="questionIndex === quizLength">
